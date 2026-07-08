@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Shorts Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>YT Shorts Generator</h1>
+    <p class="subtitle">Upload a podcast video &rarr; get ready-to-post vertical Shorts</p>
+  </header>
+
+  <main>
+    <section id="upload-section">
+      <div id="dropzone">
+        <p><strong>Drop a video here</strong> or click to choose a file</p>
+        <p class="hint">mp4, mov, mkv, webm &middot; talking-head / podcast footage works best</p>
+        <input type="file" id="file-input" accept="video/*" hidden>
+      </div>
+      <label class="option" for="captions-checkbox">
+        <input type="checkbox" id="captions-checkbox">
+        Burn in captions (big bold word-by-word text)
+      </label>
+      <div id="upload-progress" class="hidden">
+        <div class="bar"><div id="upload-bar-fill"></div></div>
+        <p id="upload-label">Uploading&hellip;</p>
+      </div>
+    </section>
+
+    <section id="job-section" class="hidden">
+      <h2>Processing</h2>
+      <div class="stages">
+        <span class="stage" data-stage="transcribing">1. Transcribing</span>
+        <span class="stage" data-stage="selecting">2. Picking moments</span>
+        <span class="stage" data-stage="rendering">3. Rendering clips</span>
+      </div>
+      <div class="bar"><div id="job-bar-fill"></div></div>
+      <p id="job-label"></p>
+    </section>
+
+    <section id="error-section" class="hidden">
+      <h2>Something went wrong</h2>
+      <pre id="error-text"></pre>
+      <button id="retry-btn">Start over</button>
+    </section>
+
+    <section id="results-section" class="hidden">
+      <div class="results-header">
+        <h2>Your Shorts</h2>
+        <a id="download-all" class="button" href="#">Download all (.zip)</a>
+      </div>
+      <div id="clips"></div>
+      <button id="new-video-btn">Process another video</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

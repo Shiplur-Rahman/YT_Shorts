@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "shorts-server",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": [
+        "run",
+        "python",
+        "-c",
+        "import os, uvicorn; uvicorn.run('app.main:app', port=int(os.environ.get('PORT', 8123)))"
+      ],
+      "port": 8123,
+      "autoPort": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[project]
+name = "yt-shorts"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.116.0",
+    "fastapi>=0.139.0",
+    "faster-whisper>=1.2.1",
+    "opencv-python>=5.0.0.93",
+    "pydantic>=2.13.4",
+    "python-dotenv>=1.2.2",
+    "python-multipart>=0.0.32",
+    "uvicorn[standard]>=0.51.0",
+]
