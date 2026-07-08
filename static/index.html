@@ -7,14 +7,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>YT Shorts Generator</h1>
-    <p class="subtitle">Upload a podcast video &rarr; get ready-to-post vertical Shorts</p>
+  <header class="app-header">
+    <div class="brand">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img">
+          <rect x="8" y="6" width="32" height="36" rx="8"></rect>
+          <path d="M20 17.5v13l11-6.5-11-6.5z"></path>
+          <path d="M14 15v-3h5M34 15v-3h-5M14 33v3h5M34 33v3h-5"></path>
+        </svg>
+      </span>
+      <div>
+        <p class="eyebrow">Local AI clipping studio</p>
+        <h1>YT Shorts Generator</h1>
+      </div>
+    </div>
+    <p class="subtitle">Upload a podcast video and turn the strongest spoken moments into vertical Shorts.</p>
   </header>
 
   <main>
-    <section id="upload-section">
+    <section id="upload-section" class="workspace-panel">
+      <div class="pipeline-strip" aria-label="Processing pipeline">
+        <span>Whisper transcript</span>
+        <span>Claude selects hooks</span>
+        <span>Speaker-aware crop</span>
+        <span>FFmpeg render</span>
+      </div>
       <div id="dropzone">
+        <p class="drop-icon" aria-hidden="true">MP4</p>
         <p><strong>Drop a video here</strong> or click to choose a file</p>
         <p class="hint">mp4, mov, mkv, webm &middot; talking-head / podcast footage works best</p>
         <input type="file" id="file-input" accept="video/*" hidden>
@@ -29,7 +48,7 @@
       </div>
     </section>
 
-    <section id="job-section" class="hidden">
+    <section id="job-section" class="workspace-panel hidden">
       <h2>Processing</h2>
       <div class="stages">
         <span class="stage" data-stage="transcribing">1. Transcribing</span>
@@ -40,13 +59,13 @@
       <p id="job-label"></p>
     </section>
 
-    <section id="error-section" class="hidden">
+    <section id="error-section" class="workspace-panel hidden">
       <h2>Something went wrong</h2>
       <pre id="error-text"></pre>
       <button id="retry-btn">Start over</button>
     </section>
 
-    <section id="results-section" class="hidden">
+    <section id="results-section" class="workspace-panel hidden">
       <div class="results-header">
         <h2>Your Shorts</h2>
         <a id="download-all" class="button" href="#">Download all (.zip)</a>
